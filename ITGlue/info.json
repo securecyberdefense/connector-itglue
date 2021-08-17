@@ -1,0 +1,261 @@
+{
+    "name": "ITGlue",
+    "label": "ITGlue",
+    "description": "ITGlue Connector",
+    "publisher": "Secure Cyber Defense, LLC",
+    "cs_approved": false,
+    "cs_compatible": true,
+    "version": "1.0.19",
+    "category": "Miscellaneous",
+    "icon_small_name": "itglue_sm.png",
+    "icon_large_name": "itglue_lg.png",
+    "help_file": "README.md",
+    "configuration": {
+        "fields": [
+            {
+                "title": "ITGlue Host",
+                "name": "itglue_host",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text"
+            },
+            {
+                "title": "API Key",
+                "name": "api_key",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "password"
+            },
+            {
+                "title": "Verify Certificates",
+                "name": "verify",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "checkbox",
+                "value": "true"
+            }
+        ]
+    },
+    "operations": [
+        {
+            "operation": "get_companies",
+            "title": "Get Companies",
+            "description": "Retrieves all companies matching the provided filters, if any. ",
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Filters",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "json",
+                    "name": "filters",
+                    "value": "{}"
+                },
+                {
+                    "title": "Page Size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_size",
+                    "value": 50
+                },
+                {
+                    "title": "Page Number",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_number",
+                    "value": 1
+                }
+            ],
+            "annotation": "get",
+            "category": "miscellaneous"
+        },
+        {
+            "operation": "get_locations",
+            "title": "Get Locations",
+            "description": "Gets all locations for a company and returns them.",
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Organization",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "type": "text",
+                    "name": "org"
+                },
+                {
+                    "title": "Filters",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "json",
+                    "name": "filters",
+                    "value": "{}"
+                },
+                {
+                    "title": "Page Size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_size",
+                    "value": 50
+                },
+                {
+                    "title": "Page Number",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_number",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "operation": "get_configurations",
+            "title": "Get Configurations",
+            "description": "Gets all configurations for a company and returns them.",
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Organization",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "type": "text",
+                    "name": "org"
+                },
+                {
+                    "title": "Filters",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "json",
+                    "name": "filters",
+                    "value": "{}"
+                },
+                {
+                    "title": "Page Size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_size",
+                    "value": 50
+                },
+                {
+                    "title": "Page Number",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_number",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "operation": "get_domains",
+            "title": "Get Domains",
+            "description": "Gets all domains for a company and returns them.",
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Organization",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "type": "text",
+                    "name": "org"
+                },
+                {
+                    "title": "Filters",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "json",
+                    "name": "filters",
+                    "value": "{}"
+                },
+                {
+                    "title": "Page Size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_size",
+                    "value": 50
+                },
+                {
+                    "title": "Page Number",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_number",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "operation": "get_flexible_asset",
+            "title": "Get Flexible Asset",
+            "description": "Gets specified flexible asset for a company and returns it.",
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Flexible Asset Name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "type": "text",
+                    "name": "flexible_asset_name"
+                },
+                {
+                    "title": "Organization",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "type": "text",
+                    "name": "org"
+                },
+                {
+                    "title": "Filters",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "json",
+                    "name": "filters",
+                    "value": "{}"
+                },
+                {
+                    "title": "Page Size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_size",
+                    "value": 50
+                },
+                {
+                    "title": "Page Number",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "type": "integer",
+                    "name": "page_number",
+                    "value": 1
+                }
+            ]
+        }
+    ]
+}
